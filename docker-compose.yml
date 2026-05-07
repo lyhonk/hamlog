@@ -1,0 +1,17 @@
+services:
+  hamlog:
+    build: .
+    container_name: hamlog
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      PORT: 4174
+    ports:
+      - "8081:4174"
+    volumes:
+      - hamlog-data:/app/server/data
+      - hamlog-uploads:/app/server/uploads
+
+volumes:
+  hamlog-data:
+  hamlog-uploads:

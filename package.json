@@ -1,0 +1,21 @@
+{
+  "name": "hamlog",
+  "version": "0.1.0",
+  "private": true,
+  "author": "Jimmy Chen <BA4JRF@gmail.com> (https://www.biogeeker.com)",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "install:all": "npm install --workspaces",
+    "dev": "node scripts/dev.mjs",
+    "dev:server": "npm --workspace server run dev",
+    "dev:client": "npm --workspace client run dev",
+    "seed": "npm --workspace server run seed",
+    "test": "npm --workspace server test && npm --workspace client run typecheck",
+    "build": "npm --workspace client run build"
+  },
+  "workspaces": [
+    "client",
+    "server"
+  ]
+}
